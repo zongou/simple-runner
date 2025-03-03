@@ -367,7 +367,7 @@ function getCodeLensCommandTitle(command: string): string {
 function provideMarkdownCodeLenses(document: vscode.TextDocument): vscode.CodeLens[] {
 	const codeLenses: vscode.CodeLens[] = [];
 	if (getConfig().get(ids.enableMarkdownCodeLens)) {
-		const codeBlockRegex = /^([ \t]*)(`{3,})(.+)\n([\s\S]*?)\n\1\2$/gm;
+		const codeBlockRegex = /^([ \t]*)(`{3,})(.*)\n([\s\S]*?)\n\1\2$/gm;
 		let match;
 
 		while ((match = codeBlockRegex.exec(document.getText())) !== null) {
