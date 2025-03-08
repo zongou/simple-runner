@@ -90,7 +90,7 @@ function getVscLangId(mdLangId: string): string {
 }
 
 class Runner {
-	private static terminal: vscode.Terminal | undefined;
+	static terminal: vscode.Terminal | undefined;
 
 	// We need to sanitize the path before using vscode.URI.fsPath.
 	// https://github.com/microsoft/vscode/blob/777f6917e2956882688847460e6f4b10a26f0670/extensions/git/src/git.ts#L353
@@ -706,6 +706,7 @@ export function activate(context: vscode.ExtensionContext) {
 	initRunButton(context);
 	const notebookKernel = initNotebook(context);
 	initConfigUpdater(context, notebookKernel);
+	vscode.window.onDidChangeActiveTerminal(t => Runner.terminal = t);
 }
 
 export async function deactivate() { }
