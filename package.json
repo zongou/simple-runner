@@ -2,7 +2,7 @@
 	"name": "simple-runner",
 	"displayName": "%ext.title%",
 	"description": "%ext.description%",
-	"version": "0.0.133",
+	"version": "0.0.134",
 	"publisher": "zongou",
 	"repository": "https://github.com/zongou/vscode-simple-runner",
 	"engines": {
@@ -24,7 +24,7 @@
 	],
 	"icon": "resources/icon.png",
 	"activationEvents": [
-		"onLanguage"
+		"onStartupFinished"
 	],
 	"main": "./out/extension.js",
 	"browser": "./out/extension.js",
